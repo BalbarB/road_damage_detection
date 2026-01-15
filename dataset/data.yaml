@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 4
+names: ['alligator cracking', 'lateral cracking', 'longitudinal cracking', 'pothole']
+
+roboflow:
+  workspace: cecilia-couto
+  project: road-damage-feyfs
+  version: 1
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/cecilia-couto/road-damage-feyfs/dataset/1
