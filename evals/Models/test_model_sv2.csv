@@ -1,0 +1,5 @@
+Format,Size(MB),metrics/mAP50-95(B),Inference time (ms/im),FPS
+PyTorch,18.3,0.1755,6.6,151.49
+TorchScript,36.4,0.1709,5.44,183.8
+MNN,36.1,0.1702,70.13,14.26
+NCNN,36.1,0.1702,70.98,14.09

@@ -1,0 +1,8 @@
+Models,Size(MB),metrics/mAP50-95(B),Inference time (ms/im),FPS
+test_model_m,77.1,0.2351,11.13,89.87
+test_model_n,10.4,0.2575,4.51,221.58
+test_model_s,36.4,0.2792,5.6,178.67
+test_model_mv2,77.1,0.1752,11.08,90.21
+test_model_nv2,10.4,0.218,4.59,217.73
+test_model_sv2,36.4,0.1709,5.44,183.8
+

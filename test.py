@@ -2,7 +2,7 @@ from ultralytics import YOLO
 
 if __name__ == "__main__":
     # Load your best trained model
-    model = YOLO("test_model.pt")
+    model = YOLO("test_modelv2.pt")
 
     metrics = model.val()
     print(metrics.box.map) 
@@ -18,4 +18,4 @@ if __name__ == "__main__":
         probs = result.probs  # Probs object for classification outputs
         obb = result.obb  # Oriented boxes object for OBB outputs
         result.show()  # display to screen
-        result.save(filename="result.jpg")  # save to disk
+        result.save(filename="resultv2.jpg")  # save to disk
