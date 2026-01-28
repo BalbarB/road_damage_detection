@@ -13,7 +13,7 @@ model = AutoModelForZeroShotObjectDetection.from_pretrained(model_id).to(device)
 model.eval()
 text = "alligator cracking. edge cracking. lateral cracking. longitudinal cracking. ravelling. rutting. striping. pothole."
 
-root_dir = "datasetgd"
+root_dir = "dataset"
 sub_folders = ["test", "train", "valid"]
 images_dir = "images"
 labels_dir = "labelsv1"
@@ -29,7 +29,6 @@ def convert_box_to_yolo(box, img_w, img_h):
 
 def train(image_path):
     image = Image.open(image_path).convert("RGB")
-    image = image.resize((1024, 1024))
     img_w, img_h = image.size
     
     inputs = processor(images=image, text=text, return_tensors="pt").to(device)
