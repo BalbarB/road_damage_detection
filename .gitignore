@@ -1,12 +1,9 @@
-
-
 runs/detect/predict*
 runs/detect/road_damage_yolo11m
 runs/detect/train
 runs/detect/val*
 env/
-datasetv2/
-
+dataset*/
 yolo*.pt
 
 devicetest.py
