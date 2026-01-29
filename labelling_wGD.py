@@ -6,15 +6,23 @@ import matplotlib.patches as patches
 from PIL import Image
 from transformers import AutoProcessor, AutoModelForZeroShotObjectDetection 
 
-model_id = "IDEA-Research/grounding-dino-tiny"
+model_id = "IDEA-Research/grounding-dino-base"
 device = "cuda" if torch.cuda.is_available() else "cpu"
 processor = AutoProcessor.from_pretrained(model_id)
 model = AutoModelForZeroShotObjectDetection.from_pretrained(model_id).to(device)
 model.eval()
-text = "alligator cracking. edge cracking. lateral cracking. longitudinal cracking. ravelling. rutting. striping. pothole."
+text = "alligator cracking. lateral cracking. longitudinal cracking. pothole."
+
+PHRASE_TO_CLASS = {
+    # Cracks (specific first!)
+    "alligator cracking": 0,
+    "lateral cracking": 1,
+    "longitudinal cracking": 2,
+    "pothole": 3
+}
 
 root_dir = "dataset"
-sub_folders = ["test", "train", "valid"]
+sub_folders = ["valid"]
 images_dir = "images"
 labels_dir = "labelsv1"
 os.makedirs(labels_dir, exist_ok=True)
@@ -27,7 +35,14 @@ def convert_box_to_yolo(box, img_w, img_h):
     height = (y2 - y1) / img_h
     return [x_center, y_center, width, height]
 
-def train(image_path):
+def get_class_id(text_label):
+    text_label = text_label.lower()
+    for phrase in sorted(PHRASE_TO_CLASS.keys(), key=len, reverse=True):
+        if phrase in text_label:
+            return PHRASE_TO_CLASS[phrase]
+    return None
+
+def annotate(image_path):
     image = Image.open(image_path).convert("RGB")
     img_w, img_h = image.size
     
@@ -39,20 +54,27 @@ def train(image_path):
         outputs,
         threshold=0.25,
         text_threshold=0.2,
-        target_sizes=[image.size[::-1]]
+        target_sizes=[(img_h, img_w)]
     )
 
     res = results[0]
     print(res)
     yolo_lines = []
 
-    for class_id, box, score in zip(
-        [i for i in range(len(res["text_labels"]))],
+    for text_label, box, score in zip(
+        res["text_labels"],
         res["boxes"],
         res["scores"]
     ):
-        if score < 0.4:
+        if score < 0.2:
             continue
+
+        class_id = get_class_id(text_label)
+        if class_id is None:
+            continue 
+
+        print(f"{text_label} → class {class_id} (score={score:.2f})")
+
         yolo_box = convert_box_to_yolo(box.tolist(), img_w, img_h)
         line = f"{class_id} " + " ".join(f"{x:.6f}" for x in yolo_box)
         yolo_lines.append(line)
@@ -68,7 +90,7 @@ for split in sub_folders:
         if not fname.lower().endswith(('.png', '.jpg', '.jpeg')):
             continue
         img_path = os.path.join(images_path, fname)
-        yolo_lines = train(img_path)
+        yolo_lines = annotate(img_path)
 
         txt_name = os.path.splitext(fname)[0] + ".txt"
         txt_path = os.path.join(labels_path, txt_name)

@@ -1,0 +1,85 @@
+GroundingDINO-tiny Model Validation Results:
+
+Ultralytics 8.4.6  Python-3.11.9 torch-2.9.1+cu130 CUDA:0 (NVIDIA GeForce RTX 4060 Laptop GPU, 8188MiB)
+YOLO11n summary (fused): 101 layers, 2,582,932 parameters, 0 gradients, 6.3 GFLOPs
+val: Fast image access  (ping: 0.00.0 ms, read: 592.4110.7 MB/s, size: 30.2 KB)
+val: Scanning C:\Users\Balbar\Desktop\Project\Road Damage\dataset\valid\labels... 664 images, 137 backgrounds, 0 corrupt: 100% ━━━━━━━━━━━━ 664/664 817.8it/s 0.8s
+val: New cache created: C:\Users\Balbar\Desktop\Project\Road Damage\dataset\valid\labels.cache
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 42/42 10.1it/s 4.2s
+                   all        664        932     0.0793     0.0457     0.0233     0.0109
+    alligator cracking         15         15          0          0   6.59e-05   1.98e-05
+      lateral cracking        196        221          0          0    6.5e-05   2.92e-05
+ longitudinal cracking         17         17          0          0   2.55e-05   5.11e-06
+               pothole        449        679      0.317      0.183      0.093     0.0437
+Speed: 1.1ms preprocess, 2.9ms inference, 0.0ms loss, 0.7ms postprocess per image
+0.01094547823821735
+
+
+Ultralytics 8.4.6  Python-3.11.9 torch-2.9.1+cu130 CUDA:0 (NVIDIA GeForce RTX 4060 Laptop GPU, 8188MiB)
+YOLO11s summary (fused): 101 layers, 9,414,348 parameters, 0 gradients, 21.3 GFLOPs
+val: Fast image access  (ping: 0.00.0 ms, read: 689.495.3 MB/s, size: 31.3 KB)
+val: Scanning C:\Users\Balbar\Desktop\Project\Road Damage\dataset\valid\labels.cache... 664 images, 137 backgrounds, 0 corrupt: 100% ━━━━━━━━━━━━ 664/664  0.0s
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 42/42 6.8it/s 6.2s
+                   all        664        932     0.0759     0.0446     0.0243     0.0114
+    alligator cracking         15         15          0          0   0.000368    0.00011
+      lateral cracking        196        221          0          0          0          0
+ longitudinal cracking         17         17          0          0   0.000268   9.31e-05
+               pothole        449        679      0.303      0.178     0.0965     0.0455
+Speed: 1.2ms preprocess, 5.9ms inference, 0.0ms loss, 0.6ms postprocess per image
+0.011435578086794934
+
+
+Ultralytics 8.4.6  Python-3.11.9 torch-2.9.1+cu130 CUDA:0 (NVIDIA GeForce RTX 4060 Laptop GPU, 8188MiB)
+YOLO11m summary (fused): 125 layers, 20,033,116 parameters, 0 gradients, 67.7 GFLOPs
+val: Fast image access  (ping: 0.00.0 ms, read: 605.6167.3 MB/s, size: 27.8 KB)
+val: Scanning C:\Users\Balbar\Desktop\Project\Road Damage\dataset\valid\labels.cache... 664 images, 137 backgrounds, 0 corrupt: 100% ━━━━━━━━━━━━ 664/664  0.0s
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 42/42 3.6it/s 11.5s
+                   all        664        932     0.0794     0.0464     0.0263     0.0122
+    alligator cracking         15         15          0          0   8.43e-05   1.69e-05
+      lateral cracking        196        221          0          0          0          0
+ longitudinal cracking         17         17          0          0          0          0
+               pothole        449        679      0.318      0.186      0.105     0.0487
+Speed: 1.1ms preprocess, 14.1ms inference, 0.0ms loss, 0.6ms postprocess per image
+0.012177352800427688
+
+GroundingDINO-base Model Validation Results:
+
+Ultralytics 8.4.6  Python-3.11.9 torch-2.9.1+cu130 CUDA:0 (NVIDIA GeForce RTX 4060 Laptop GPU, 8188MiB)
+YOLO11n summary (fused): 101 layers, 2,582,932 parameters, 0 gradients, 6.3 GFLOPs
+val: Fast image access  (ping: 0.00.0 ms, read: 744.2206.9 MB/s, size: 29.5 KB)
+val: Scanning C:\Users\Balbar\Desktop\Project\Road Damage\dataset\valid\labels.cache... 664 images, 84 backgrounds, 0 corrupt: 100% ━━━━━━━━━━━━ 664/664  0.0s
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 42/42 10.0it/s 4.2s
+                   all        664       1431      0.129     0.0884     0.0692     0.0326
+    alligator cracking         82         89    0.00703     0.0112   0.000464   0.000313
+      lateral cracking         99        106          0          0   3.25e-05   2.28e-05
+ longitudinal cracking        396        497          0          0    0.00107   0.000367
+               pothole        376        739      0.507      0.342      0.275       0.13
+Speed: 1.1ms preprocess, 2.8ms inference, 0.0ms loss, 0.7ms postprocess per image
+0.032633562296494924
+
+Ultralytics 8.4.6  Python-3.11.9 torch-2.9.1+cu130 CUDA:0 (NVIDIA GeForce RTX 4060 Laptop GPU, 8188MiB)
+YOLO11s summary (fused): 101 layers, 9,414,348 parameters, 0 gradients, 21.3 GFLOPs
+val: Fast image access  (ping: 0.00.0 ms, read: 817.0239.1 MB/s, size: 30.2 KB)
+val: Scanning C:\Users\Balbar\Desktop\Project\Road Damage\dataset\valid\labels.cache... 664 images, 84 backgrounds, 0 corrupt: 100% ━━━━━━━━━━━━ 664/664  0.0s
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 42/42 7.0it/s 6.0s
+                   all        664       1431      0.115     0.0854     0.0675     0.0334
+    alligator cracking         82         89     0.0062     0.0112   0.000758   0.000634
+      lateral cracking         99        106          0          0          0          0
+ longitudinal cracking        396        497          0          0    0.00315    0.00152
+               pothole        376        739      0.453       0.33      0.266      0.131
+Speed: 1.1ms preprocess, 5.9ms inference, 0.0ms loss, 0.5ms postprocess per image
+0.03339230211977804
+
+Ultralytics 8.4.6  Python-3.11.9 torch-2.9.1+cu130 CUDA:0 (NVIDIA GeForce RTX 4060 Laptop GPU, 8188MiB)
+YOLO11m summary (fused): 125 layers, 20,033,116 parameters, 0 gradients, 67.7 GFLOPs
+val: Fast image access  (ping: 0.00.0 ms, read: 747.0234.6 MB/s, size: 29.6 KB)
+val: Scanning C:\Users\Balbar\Desktop\Project\Road Damage\dataset\valid\labels.cache... 664 images, 84 backgrounds, 0 corrupt: 100% ━━━━━━━━━━━━ 664/664  0.0s
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 42/42 3.6it/s 11.6s
+                   all        664       1431       0.12     0.0931     0.0724     0.0354
+    alligator cracking         82         89    0.00589     0.0112   0.000472    0.00021
+      lateral cracking         99        106          0          0          0          0
+ longitudinal cracking        396        497          0          0   3.31e-05   3.31e-06
+               pothole        376        739      0.475      0.361      0.289      0.141
+Speed: 1.1ms preprocess, 14.2ms inference, 0.0ms loss, 0.5ms postprocess per image
+0.03537065452374706
+

@@ -4,7 +4,9 @@ if __name__ == "__main__":
     # Load your best trained model
     model = YOLO("models/test_model_s.pt")
 
-    metrics = model.val()
+    metrics = model.val(
+        data="dataset/data.yaml",
+    )
     print(metrics.box.map) 
     
     # Run inference on an image
