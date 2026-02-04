@@ -6,4 +6,5 @@ env/
 dataset*/
 yolo*.pt
 
+config.yaml
 devicetest.py

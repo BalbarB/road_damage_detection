@@ -1,0 +1,6 @@
+(env) python .\labelling_wGemini.py
+Image size:  416 416
+Bounding boxes: [['pothole', 91, 241, 171, 268], ['pothole', 261, 250, 330, 272], ['pothole', 154, 283, 217, 309]]
+(env) python .\labelling_wGemini.py
+Image size:  416 416
+Bounding boxes: [['longitudinal cracking', 218, 273, 256, 413], ['longitudinal cracking', 299, 336, 342, 393], ['lateral cracking', 288, 376, 346, 388]]

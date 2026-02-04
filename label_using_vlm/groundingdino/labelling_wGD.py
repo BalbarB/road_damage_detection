@@ -14,17 +14,16 @@ model.eval()
 text = "alligator cracking. lateral cracking. longitudinal cracking. pothole."
 
 PHRASE_TO_CLASS = {
-    # Cracks (specific first!)
     "alligator cracking": 0,
     "lateral cracking": 1,
     "longitudinal cracking": 2,
     "pothole": 3
 }
 
-root_dir = "dataset"
+root_dir = "../../dataset"
 sub_folders = ["valid"]
 images_dir = "images"
-labels_dir = "labelsv1"
+labels_dir = "labels"
 os.makedirs(labels_dir, exist_ok=True)
 
 def convert_box_to_yolo(box, img_w, img_h):
